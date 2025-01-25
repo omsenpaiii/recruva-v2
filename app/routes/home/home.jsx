@@ -7,7 +7,7 @@ import gamestackTexture from '~/assets/gamestack-login.jpg';
 import sliceTextureLarge from '~/assets/slice-app-large.jpg';
 import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
 import sliceTexture from '~/assets/slice-app.jpg';
-import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
+import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.png';
 import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
 import sprTexture from '~/assets/spr-lesson-builder-dark.jpg';
 import { Footer } from '~/components/footer';
@@ -103,8 +103,8 @@ export const Home = () => {
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
-        title="Unlimited Sender Profiles"
-        description="Effortlessly manage multiple sender profiles to scale your hiring efforts and maximize outreach. Assign unique profiles to different teams or hiring campaigns and increase efficiency by utilizing all your resources effectively."
+        title="Complex Automations with Custom Variables"
+        description="Effortlessly create seamless automations to maximise candidate responses from the passive job market, including personalised follow ups."
         buttonText="Explore Feature"
         buttonLink="/projects/smart-sparrow"
         model={{
@@ -124,10 +124,10 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Master Your Candidate Database with Ease"
-        description="Keep your talent pool organized and accessible with a powerful, user-friendly database. Track candidates’ journeys, analyze profiles, and ensure you never miss out on high-potential talent again!"
-        buttonText="View website"
-        buttonLink="https://gamestack.omw.com"
+        title="Targeted Candidate Search"
+        description="Access the entirety of LinkedIn's Database with just a few clicks."
+        buttonText="Try it out"
+        buttonLink="/#details"
         model={{
           type: 'phone',
           alt: 'App login screen',
@@ -148,8 +148,8 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Automatic Follow-Ups & Centralized Unibox"
-        description="Never let a conversation slip through the cracks. Automate follow-up messages to keep candidates engaged and improve response rates. All your candidate communications are centralized in one easy-to-manage Unibox for seamless tracking, collaboration, and prompt action!"
+        title="Centralised Unibox"
+        description="Avoid confusion and manage all your candidate responses in a single, organised space... Forget switching tabs and accounts for accessing critical conversations."
         buttonText="View project"
         buttonLink="/projects/slice"
         model={{

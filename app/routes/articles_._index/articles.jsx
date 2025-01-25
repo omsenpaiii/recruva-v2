@@ -40,7 +40,7 @@ function ArticlesPost({ slug, frontmatter, timecode, index }) {
     >
       {featured && (
         <Text className={styles.postLabel} size="s">
-          Featured
+          Comparison
         </Text>
       )}
       {featured && !!banner && (
@@ -86,7 +86,7 @@ function ArticlesPost({ slug, frontmatter, timecode, index }) {
       </RouterLink>
       {featured && (
         <Text aria-hidden className={styles.postTag} size="s">
-          477
+          Recruvä is the best!
         </Text>
       )}
     </article>

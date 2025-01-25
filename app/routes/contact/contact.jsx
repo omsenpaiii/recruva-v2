@@ -119,7 +119,7 @@ export const Contact = () => {
               as="h1"
               style={getDelay(tokens.base.durationXS, initDelay, 0.3)}
             >
-              <DecoderText text="Schedule an appointment" start={status !== 'exited'} delay={300} />
+              <DecoderText text="Schedule a call" start={status !== 'exited'} delay={300} />
             </Heading>
             <Divider
               className={styles.divider}

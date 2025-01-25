@@ -1,46 +1,355 @@
-import profileImgLarge from '~/assets/profile-img-shrey.jpeg';
-import profileImgPlaceholder from '~/assets/profile-placeholder.jpg';
-import profileImg from '~/assets/profile.jpg';
-import { Button } from '~/components/button';
-import { DecoderText } from '~/components/decoder-text';
-import { Divider } from '~/components/divider';
-import { Heading } from '~/components/heading';
-import { Image } from '~/components/image';
-import { Link } from '~/components/link';
-import { Section } from '~/components/section';
-import { Text } from '~/components/text';
-import { Transition } from '~/components/transition';
-import { Fragment, useState } from 'react';
-import { media } from '~/utils/style';
-import katakana from './katakana.svg';
-import styles from './profile.module.css';
+import profileImgLarge from "~/assets/profile-img-shrey.jpeg"
+import profileImgPlaceholder from "~/assets/profile-placeholder.jpg"
+import profileImg from "~/assets/profile.jpg"
+import { Button } from "~/components/button"
+import { DecoderText } from "~/components/decoder-text"
+import { Divider } from "~/components/divider"
+import { Heading } from "~/components/heading"
+import { Image } from "~/components/image"
+import { Link } from "~/components/link"
+import { Section } from "~/components/section"
+import { Text } from "~/components/text"
+import { Transition } from "~/components/transition"
+import { Fragment, useState } from "react"
+import { media } from "~/utils/style"
+import katakana from "./katakana.svg"
+import styles from "./profile.module.css"
+import config from "~/config.json"
+import { Check, Rocket, Flame } from 'lucide-react'
 
-const ProfileText = ({ visible, titleId }) => (
+const PricingPage = ({ visible, titleId }) => {
+  const [billingCycle, setBillingCycle] = useState('monthly')
+  
+  const prices = {
+    pro: {
+      monthly: 155,
+      annually: 1550
+    },
+    scale: {
+      monthly: 557,
+      annually: 5570
+    }
+  }
+
+  return (
+    <Fragment>
+      <div className={styles.wrapper}>
+        <div className={styles.container}>
+          <div className={styles.titleContainer}>
+            <Heading className={styles.mainTitle} data-visible={visible} level={3} id={titleId}>
+              <DecoderText text="Pricing" start={visible} delay={500} />
+            </Heading>
+            <div className={styles.stars}>
+              <svg viewBox="0 0 24 24" fill="currentColor" className={styles.star}>
+                <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" className={styles.star}>
+                <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z" />
+              </svg>
+            </div>
+          </div>
+          <div className={styles.header}>
+            <h1 className={styles.title}>
+              Simple pricing
+              <br />
+              for agencies of all sizes
+            </h1>
+            <p className={styles.subtitle}>Project-based payments, as you go</p>
+          </div>
+
+          <div className={styles.billingToggle}>
+            <button 
+              className={styles.toggleButton} 
+              data-active={billingCycle === 'monthly'}
+              onClick={() => setBillingCycle('monthly')}
+            >
+              Monthly
+            </button>
+            <button 
+              className={styles.toggleButton} 
+              data-active={billingCycle === 'annually'}
+              onClick={() => setBillingCycle('annually')}
+            >
+              Annually
+            </button>
+          </div>
+
+          <div className={styles.pricingGrid}>
+            <div className={styles.card}>
+              <div className={styles.cardHeader}>
+                <h2 className={styles.cardTitle}>Pro</h2>
+                <div className={styles.iconWrapper}>
+                  <Rocket className={styles.icon} />
+                </div>
+              </div>
+
+              <div className={styles.pricing}>
+                <div className={styles.amount}>
+                  <span className={styles.price}>${prices.pro[billingCycle]}</span>
+                  <span className={styles.period}>/ team</span>
+                </div>
+                <p className={styles.description}>
+                  The most powerful cloud automation designed for PRO teams
+                </p>
+              </div>
+
+              <div className={styles.features}>
+                <div className={styles.feature}>
+                  <Check className={styles.checkIcon} />
+                  <span>Unlimited LinkedIn & Email accounts</span>
+                </div>
+                <div className={styles.feature}>
+                  <Check className={styles.checkIcon} />
+                  <span>Unlimited basic enrichment</span>
+                </div>
+                <div className={styles.feature}>
+                  <Check className={styles.checkIcon} />
+                  <span>20k uploaded contacts</span>
+                </div>
+                <div className={styles.feature}>
+                  <Check className={styles.checkIcon} />
+                  <span>40k activities monthly</span>
+                </div>
+                <div className={styles.feature}>
+                  <Check className={styles.checkIcon} />
+                  <span>10k advanced enrichment credits</span>
+                </div>
+              </div>
+              <button className={styles.purchaseButton}>
+                Start for free
+              </button>
+            </div>
+
+            <div className={styles.card}>
+              <div className={styles.cardHeader}>
+                <h2 className={styles.cardTitle}>Scale</h2>
+                <div className={styles.iconWrapper}>
+                  <Flame className={styles.icon} />
+                </div>
+              </div>
+
+              <div className={styles.pricing}>
+                <div className={styles.amount}>
+                  <span className={styles.price}>${prices.scale[billingCycle]}</span>
+                  <span className={styles.period}>/ team</span>
+                </div>
+                <p className={styles.description}>
+                  The best way to scale outbound channel and maximize ROI
+                </p>
+              </div>
+
+              <div className={styles.features}>
+                <div className={styles.feature}>
+                  <Check className={styles.checkIcon} />
+                  <span>Unlimited LinkedIn & Email accounts</span>
+                </div>
+                <div className={styles.feature}>
+                  <Check className={styles.checkIcon} />
+                  <span>Unlimited basic enrichment</span>
+                </div>
+                <div className={styles.feature}>
+                  <Check className={styles.checkIcon} />
+                  <span>200k uploaded contacts</span>
+                </div>
+                <div className={styles.feature}>
+                  <Check className={styles.checkIcon} />
+                  <span>400k activities monthly</span>
+                </div>
+                <div className={styles.feature}>
+                  <Check className={styles.checkIcon} />
+                  <span>100k advanced enrichment credits</span>
+                </div>
+              </div>
+              <button className={styles.purchaseButton}>
+                Start for free
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Fragment>
+  )
+}
+
+const FeatureComparison = ({ visible, titleId }) => (
   <Fragment>
-  <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
-    <DecoderText text="How to use Recruvä?" start={visible} delay={500} />
-  </Heading>
-  <Text className={styles.description} data-visible={visible} size="l" as="p">
-    Getting started with <strong>Recruvä</strong> is simple and takes just a few steps to streamline your hiring process.
-  </Text>
-  
-  <Text className={styles.description} data-visible={visible} size="l" as="p">
-    <strong>1. Sign Up</strong> – Create your account and set up your sender profiles effortlessly.  
-  </Text>
-  
-  <Text className={styles.description} data-visible={visible} size="l" as="p">
-    <strong>2. Launch Your Automations in 48 Hours</strong> – Set up smart follow-ups, customize outreach, and let Recruvä handle the rest.  
-  </Text>
-  
-  <Text className={styles.description} data-visible={visible} size="l" as="p">
-    <strong>3. Start Getting Candidate Responses</strong> – Engage top talent, track replies in your centralized inbox, and hire smarter, faster.  
-  </Text>
-</Fragment>
-);
+    <div className={styles.pricingContainer} data-visible={visible}>
+      <div className={styles.pricingTable}>
+        <div className={styles.tableWrapper}>
+          <table>
+            <thead>
+              <tr>
+                <th>Exclusive</th>
+                <th>Pro</th>
+                <th>Scale</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Unlimited LinkedIn & Email accounts</td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+              </tr>
+              <tr>
+                <td>Sender Profiles rotation</td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+              </tr>
+              <tr>
+                <td>Exclusive account safety with Single Session Protection</td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+              </tr>
+              <tr>
+                <td>Unified senders dashboard</td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+              </tr>
+              <tr>
+                <td>LinkedIn & Email full historical communication sync</td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+              </tr>
+              <tr>
+                <td>Advanced Enrichment credits</td>
+                <td>10,000</td>
+                <td>100,000</td>
+              </tr>
+              <tr>
+                <td>Activities limit</td>
+                <td>40,000</td>
+                <td>400,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className={styles.tableWrapper}>
+          <table>
+            <thead>
+              <tr>
+                <th>Core Features</th>
+                <th>Pro</th>
+                <th>Scale</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cloud LinkedIn automation (Residential proxy included)</td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+              </tr>
+              <tr>
+                <td>Cloud Email automation</td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+              </tr>
+              <tr>
+                <td>A-Z Testing</td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+              </tr>
+              <tr>
+                <td>Data Import from LinkedIn and CSV</td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+              </tr>
+              <tr>
+                <td>LinkedIn Chrome Extension to save leads from LinkedIn</td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+              </tr>
+              <tr>
+                <td>CRM with advanced filters</td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+              </tr>
+              <tr>
+                <td>SDR Task Manager</td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+              </tr>
+              <tr>
+                <td>Webhooks</td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+              </tr>
+              <tr>
+                <td>API</td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+                <td>
+                  <Button icon="check" secondary />
+                </td>
+              </tr>
+              <tr>
+                <td>Number of users</td>
+                <td>5 users</td>
+                <td>Unlimited</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </Fragment>
+)
 
 export const Profile = ({ id, visible, sectionRef }) => {
-  const [focused, setFocused] = useState(false);
-  const titleId = `${id}-title`;
+  const [focused, setFocused] = useState(false)
+  const titleId = `${id}-title`
 
   return (
     <Section
@@ -56,26 +365,11 @@ export const Profile = ({ id, visible, sectionRef }) => {
       <Transition in={visible || focused} timeout={0}>
         {({ visible, nodeRef }) => (
           <div className={styles.content} ref={nodeRef}>
-            <div className={styles.column}>
-              <ProfileText visible={visible} titleId={titleId} />
-              <Button
-                secondary
-                className={styles.button}
-                data-visible={visible}
-                href="/contact"
-                icon="send"
-              >
-                Send me a message
-              </Button>
-            </div>
-            <div className={styles.column}>
+            <PricingPage visible={visible} titleId={titleId} />
+            <FeatureComparison visible={visible} titleId={titleId} />
+            <div className={styles.aboutUs}>
               <div className={styles.tag} aria-hidden>
-                <Divider
-                  notchWidth="64px"
-                  notchHeight="8px"
-                  collapsed={!visible}
-                  collapseDelay={1000}
-                />
+                <Divider notchWidth="64px" notchHeight="8px" collapsed={!visible} collapseDelay={1000} />
                 <div className={styles.tagText} data-visible={visible}>
                   About Us.
                 </div>
@@ -96,9 +390,12 @@ export const Profile = ({ id, visible, sectionRef }) => {
                 </svg>
               </div>
             </div>
+            <Button secondary className={styles.button} data-visible={visible} href="/contact" icon="send">
+              Get Started
+            </Button>
           </div>
         )}
       </Transition>
     </Section>
-  );
-};
+  )
+}
