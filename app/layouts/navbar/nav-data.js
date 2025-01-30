@@ -26,7 +26,7 @@ export const navLinks = [
 export const socialLinks = [
   {
     label: 'LinkedIn',
-    url: `https://linkedin.app/profile/${config.linkedin}`,
+    url: `https://www.linkedin.com/in/${config.linkedin}`,
     icon: 'linkedin',
   },
   {
