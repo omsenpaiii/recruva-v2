@@ -9,6 +9,8 @@ import "framer-motion";
 import "@mdx-js/react";
 import "@aws-sdk/client-ses";
 import "lucide-react";
+
+// Named exports
 export {
   s as assets,
   i as assetsBuildDirectory,
@@ -19,4 +21,17 @@ export {
   h as mode,
   p as publicPath,
   q as routes
+};
+
+// Default export for Remix
+export default {
+  assets: s,
+  assetsBuildDirectory: i,
+  basename: j,
+  entry: o,
+  future: k,
+  isSpaMode: l,
+  mode: h,
+  publicPath: p,
+  routes: q,
 };
