@@ -22,12 +22,12 @@ const PricingPage = ({ visible, titleId }) => {
   
   const prices = {
     pro: {
-      monthly: 155,
-      annually: 1550
+      monthly: 590,
+      annually: 406
     },
     scale: {
-      monthly: 557,
-      annually: 5570
+      monthly: 3750,
+      annually: 2580
     }
   }
 
@@ -86,7 +86,7 @@ const PricingPage = ({ visible, titleId }) => {
               <div className={styles.pricing}>
                 <div className={styles.amount}>
                   <span className={styles.price}>${prices.pro[billingCycle]}</span>
-                  <span className={styles.period}>/ team</span>
+                  <span className={styles.period}>/ team / mo</span>
                 </div>
                 <p className={styles.description}>
                   The most powerful cloud automation designed for PRO teams
@@ -116,7 +116,7 @@ const PricingPage = ({ visible, titleId }) => {
                 </div>
                 <div className={styles.feature}>
                   <Check className={styles.checkIcon} />
-                  <span>Hire 25+ people monthly</span>
+                  <span>Hire 30+ people monthly</span>
                 </div>
                 <div className={styles.feature}>
                   <Check className={styles.checkIcon} />
@@ -141,7 +141,7 @@ const PricingPage = ({ visible, titleId }) => {
               <div className={styles.pricing}>
                 <div className={styles.amount}>
                   <span className={styles.price}>${prices.scale[billingCycle]}</span>
-                  <span className={styles.period}>/ team</span>
+                  <span className={styles.period}>/ team / mo</span>
                 </div>
                 <p className={styles.description}>
                   The best way to scale outbound channel and maximize ROI
@@ -171,7 +171,7 @@ const PricingPage = ({ visible, titleId }) => {
                 </div>
                 <div className={styles.feature}>
                   <Check className={styles.checkIcon} />
-                  <span>Hire 175+ people monthly, ideal for agencies</span>
+                  <span>Hire 300+ people monthly, ideal for agencies</span>
                 </div>
                 <div className={styles.feature}>
                   <Check className={styles.checkIcon} />
