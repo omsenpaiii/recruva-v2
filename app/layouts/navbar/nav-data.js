@@ -25,9 +25,9 @@ export const navLinks = [
 
 export const socialLinks = [
   {
-    label: 'Bluesky',
-    url: `https://bsky.app/profile/${config.bluesky}`,
-    icon: 'bluesky',
+    label: 'LinkedIn',
+    url: `https://linkedin.app/profile/${config.linkedin}`,
+    icon: 'linkedin',
   },
   {
     label: 'Github',

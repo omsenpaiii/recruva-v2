@@ -18,7 +18,8 @@ export default defineConfig({
   },
   server: {
     port: 7777,
-  },
+    allowedHosts: ['objects-equilibrium-folding-judges.trycloudflare.com'], // Add this line
+  },  
   plugins: [
     mdx({
       rehypePlugins: [[rehypeImgSize, { dir: 'public' }], rehypeSlug, rehypePrism],

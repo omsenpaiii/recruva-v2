@@ -18,9 +18,9 @@ export const PricingPage = ({ visible, titleId }) => (
         <h1 className={styles.title}>
           Simple pricing
           <br />
-          for agencies of all sizes
+          for companies and agencies
         </h1>
-        <p className={styles.subtitle}>Project-based payments, as you go</p>
+        <p className={styles.subtitle}>Start your free trial, without your credit card</p>
       </div>
 
       <div className={styles.billingToggle}>
@@ -44,7 +44,7 @@ export const PricingPage = ({ visible, titleId }) => (
 
           <div className={styles.pricing}>
             <div className={styles.amount}>
-              <span className={styles.price}>$155</span>
+              <span className={styles.price}>$592</span>
               <span className={styles.period}>/ team</span>
             </div>
             <p className={styles.description}>The most powerful cloud automation designed for PRO teams</p>
@@ -71,6 +71,14 @@ export const PricingPage = ({ visible, titleId }) => (
               <Check className={styles.checkIcon} />
               <span>10k advanced enrichment credits</span>
             </div>
+            <div className={styles.feature}>
+              <Check className={styles.checkIcon} />
+              <span>Hire 25+ people monthly</span>
+            </div>
+            <div className={styles.feature}>
+                  <Check className={styles.checkIcon} />
+                  <span>Generate 100+ B2B/B2C warm leads monthly</span>
+                </div>
           </div>
 
           <button className={styles.button}>Start for free</button>
@@ -86,7 +94,7 @@ export const PricingPage = ({ visible, titleId }) => (
 
           <div className={styles.pricing}>
             <div className={styles.amount}>
-              <span className={styles.price}>$557</span>
+              <span className={styles.price}>$3772</span>
               <span className={styles.period}>/ team</span>
             </div>
             <p className={styles.description}>The best way to scale outbound channel and maximize ROI</p>
@@ -113,6 +121,14 @@ export const PricingPage = ({ visible, titleId }) => (
               <Check className={styles.checkIcon} />
               <span>100k advanced enrichment credits</span>
             </div>
+            <div className={styles.feature}>
+              <Check className={styles.checkIcon} />
+              <span>Hire 175+ people monthly, ideal for agencies</span>
+            </div>
+            <div className={styles.feature}>
+                  <Check className={styles.checkIcon} />
+                  <span>Generate 1000+ B2B/B2C warm leads monthly</span>
+                </div>
           </div>
 
           <button className={styles.button}>Start for free</button>

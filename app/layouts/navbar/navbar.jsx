@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from 'react';
 import { cssProps, media, msToNum, numToMs } from '~/utils/style';
 import { NavToggle } from './nav-toggle';
 import { ThemeToggle } from './theme-toggle';
+import { LoginButton } from './theme-toggle';  // Import LoginButton
 import { navLinks, socialLinks } from './nav-data';
 import config from '~/config.json';
 import styles from './navbar.module.css';
@@ -25,18 +26,15 @@ export const Navbar = () => {
   const scrollToHash = useScrollToHash();
 
   useEffect(() => {
-    // Prevent ssr mismatch by storing this in state
     setCurrent(`${location.pathname}${location.hash}`);
   }, [location]);
 
-  // Handle smooth scroll nav items
   useEffect(() => {
     if (!target || location.pathname !== '/') return;
     setCurrent(`${location.pathname}${target}`);
     scrollToHash(target, () => setTarget(null));
   }, [location.pathname, scrollToHash, target]);
 
-  // Handle swapping the theme when intersecting with inverse themed elements
   useEffect(() => {
     const navItems = document.querySelectorAll('[data-navbar-item]');
     const inverseTheme = theme === 'dark' ? 'light' : 'dark';
@@ -90,7 +88,6 @@ export const Navbar = () => {
       }
     };
 
-    // Currently only the light theme has dark full-width elements
     if (theme === 'light') {
       navItemMeasurements = Array.from(navItems).map(item => {
         const rect = item.getBoundingClientRect();
@@ -112,7 +109,6 @@ export const Navbar = () => {
     };
   }, [theme, windowSize, location.key]);
 
-  // Check if a nav item should be active
   const getCurrent = (url = '') => {
     const nonTrailing = current?.endsWith('/') ? current?.slice(0, -1) : current;
 
@@ -123,7 +119,6 @@ export const Navbar = () => {
     return '';
   };
 
-  // Store the current hash to scroll to
   const handleNavItemClick = event => {
     const hash = event.currentTarget.href.split('#')[1];
     setTarget(null);
@@ -199,7 +194,10 @@ export const Navbar = () => {
           </nav>
         )}
       </Transition>
-      {!isMobile && <ThemeToggle data-navbar-item />}
+      <div className={styles.navbarActions}>
+        {!isMobile && <ThemeToggle data-navbar-item />}
+        <LoginButton />
+      </div>
     </header>
   );
 };

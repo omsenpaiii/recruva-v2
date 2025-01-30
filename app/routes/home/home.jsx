@@ -104,9 +104,9 @@ export const Home = () => {
         visible={visibleSections.includes(projectOne.current)}
         index={1}
         title="Complex Automations with Custom Variables"
-        description="Effortlessly create seamless automations to maximise candidate responses from the passive job market, including personalised follow ups."
-        buttonText="Explore Feature"
-        buttonLink="/projects/smart-sparrow"
+        description="Effortlessly create seamless automations to maximise candidate responses from the passive job market, with personalised follow ups."
+        buttonText="Try it out"
+        buttonLink="/#details"
         model={{
           type: 'laptop',
           alt: 'Smart Sparrow lesson builder',
@@ -150,8 +150,8 @@ export const Home = () => {
         index={3}
         title="Centralised Unibox"
         description="Avoid confusion and manage all your candidate responses in a single, organised space... Forget switching tabs and accounts for accessing critical conversations."
-        buttonText="View project"
-        buttonLink="/projects/slice"
+        buttonText="View all features"
+        buttonLink="/projects/smart-sparrow"
         model={{
           type: 'laptop',
           alt: 'Annotating a biomedical image in the Slice app',

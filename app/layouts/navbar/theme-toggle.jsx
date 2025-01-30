@@ -38,7 +38,22 @@ export const ThemeToggle = ({ isMobile, ...rest }) => {
           />
         </svg>
       </Button>
-      <Button className={styles.login} onClick={() => alert('Login Clicked')}>Login</Button>
     </div>
+  );
+};
+
+export const LoginButton = ({ isMobile, ...rest }) => {
+  // Replace with your login URL
+  const loginUrl = 'https://app.recruva.io/login';
+
+  return (
+    <Button 
+      className={styles.login} 
+      data-mobile={isMobile} 
+      onClick={() => window.location.href = loginUrl} // Redirects to the login page
+      {...rest}
+    >
+      Login
+    </Button>
   );
 };

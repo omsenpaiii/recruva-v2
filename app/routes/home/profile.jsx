@@ -52,9 +52,9 @@ const PricingPage = ({ visible, titleId }) => {
             <h1 className={styles.title}>
               Simple pricing
               <br />
-              for agencies of all sizes
+              for companies and agencies
             </h1>
-            <p className={styles.subtitle}>Project-based payments, as you go</p>
+            <p className={styles.subtitle}>Start your free trial, without your credit card</p>
           </div>
 
           <div className={styles.billingToggle}>
@@ -114,10 +114,20 @@ const PricingPage = ({ visible, titleId }) => {
                   <Check className={styles.checkIcon} />
                   <span>10k advanced enrichment credits</span>
                 </div>
+                <div className={styles.feature}>
+                  <Check className={styles.checkIcon} />
+                  <span>Hire 25+ people monthly</span>
+                </div>
+                <div className={styles.feature}>
+                  <Check className={styles.checkIcon} />
+                  <span>Generate 100+ B2B/B2C warm leads monthly</span>
+                </div>
               </div>
-              <button className={styles.purchaseButton}>
-                Start for free
-              </button>
+              <a href="https://app.recruva.io/signup">
+                <button className={styles.purchaseButton}>
+                  Start for free
+                </button>
+              </a>
             </div>
 
             <div className={styles.card}>
@@ -159,10 +169,20 @@ const PricingPage = ({ visible, titleId }) => {
                   <Check className={styles.checkIcon} />
                   <span>100k advanced enrichment credits</span>
                 </div>
+                <div className={styles.feature}>
+                  <Check className={styles.checkIcon} />
+                  <span>Hire 175+ people monthly, ideal for agencies</span>
+                </div>
+                <div className={styles.feature}>
+                  <Check className={styles.checkIcon} />
+                  <span>Generate 1000+ B2B/B2C warm leads monthly</span>
+                </div>
               </div>
-              <button className={styles.purchaseButton}>
-                Start for free
-              </button>
+              <a href="https://app.recruva.io/signup">
+                <button className={styles.purchaseButton}>
+                  Start for free
+                </button>
+              </a>
             </div>
           </div>
         </div>
