@@ -1,1 +1,0 @@
-import{j as n}from"./index-BjU3_pzO.js";import{u as r}from"./index-C_PduqxF.js";function o(t){return n.jsx(n.Fragment,{})}function a(t={}){const{wrapper:e}={...r(),...t.components};return e?n.jsx(e,{...t,children:n.jsx(o,{...t})}):o()}export{a as default};

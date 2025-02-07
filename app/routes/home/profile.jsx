@@ -123,11 +123,9 @@ const PricingPage = ({ visible, titleId }) => {
                   <span>Generate 100+ B2B/B2C warm leads monthly</span>
                 </div>
               </div>
-              <a href="https://app.recruva.io/signup">
-                <button className={styles.purchaseButton}>
-                  Start for free
-                </button>
-              </a>
+              <Link href="https://app.recruva.io/signup">
+                <button className={styles.purchaseButton}>Start for free</button>
+              </Link>
             </div>
 
             <div className={styles.card}>
@@ -178,11 +176,9 @@ const PricingPage = ({ visible, titleId }) => {
                   <span>Generate 1000+ B2B/B2C warm leads monthly</span>
                 </div>
               </div>
-              <a href="https://app.recruva.io/signup">
-                <button className={styles.purchaseButton}>
-                  Start for free
-                </button>
-              </a>
+              <Link href="https://app.recruva.io/signup">
+                <button className={styles.purchaseButton}>Start for free</button>
+              </Link>
             </div>
           </div>
         </div>
